@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaReturns</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function openAppLink() {
+            // Redirect to the app using the custom URL scheme
+            window.location.href = "alphareturns://launchGame?srcToken=TourneyTeam_50443715_ArTeam";
+ 
+            // Fallback mechanism
+            setTimeout(function() {
+                alert("If the app did not open, please check if it is installed.");
+                // Optionally redirect to a webpage
+                // window.location.href = "https://www.example.com"; // Replace with your fallback URL
+            }, 2000); // 2 seconds delay
+        }
+ 
+        function shareURL() {
+            const url = "alphareturns://launchGame?srcToken=TourneyTeam_50443715_ArTeam";
+            const text = "Check out this game!";
+            //check if the web share apis supported
+            if(navigator.share){
+                navigator.share({
+                    title:'Time for the Battle Join Now!',
+                    text: text,
+                    url: url
+                })
+                .then(() => console.log('share Successful'))
+                .catch((error) => console.error('error while sharing', error));
+            }
+            else{
+                alert("Web Share API is not supported in your browser")
+            }
+        }
+</script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">JOIN NOW!</h1>
+        <button class= "launch"onclick="openAppLink()">Launch Game</button>
+        <button class="share-button" onclick="shareURL()"> Share </button><br>
+        <p class="contact">DOWNLOAD NOW!</p>
+        <a href="https://play.google.com/store/search?q=alpha+returns&c=apps" target="_blank">
+            <img src="images/play.png" alt="Get it on Google Play" width="150">
+        </a>
+        
+        <a href="https://apps.apple.com/in/app/alpha-returns/id6479646239" target="_blank">
+            <img src="images/app.png" alt="Download on the App Store" width="150">
+        </a><br>
+        
+        
+    </div>
+</body>
+</html>
