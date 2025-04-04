@@ -1,0 +1,68 @@
+body {
+    background-image: url(images/bg2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: black;
+    padding: 30px;
+    border-radius: 30px;
+    margin-top:40%;
+    margin-bottom:40%;
+    margin-left: 1150px;
+    box-shadow: 0 0 20px rgba(218, 205, 205, 0.5);
+    width: 400px;
+    height: auto;
+}
+
+.title {
+    font-size: 50px;
+    color: red;
+    text-transform: uppercase;
+}
+
+.contact {
+    font-size: 18px;
+    color: white;
+    margin-top: 10px;
+}
+
+.contact a {
+    color: red;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+.launch, .share-button{
+    background-image: linear-gradient(90deg, #850505, #e20d0d);
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* Text color */
+    background-color: #ff2600; /* Bootstrap primary color */
+    border-radius: 10px; /* Rounded corners */
+    display: block;
+    text-align: center;
+    height: 50px;
+    width: 180px;
+}
+.share-button{
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+}
