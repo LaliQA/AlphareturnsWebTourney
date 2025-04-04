@@ -21,8 +21,15 @@
        function shareURL() {
             const gameUrl = "alphareturns://launchGame?srcToken=TourneyTeam_50443715_ArTeam";
             const message = encodeURIComponent("🔥 Time for the Battle! Join Now! 🚀\nPlay here: " + gameUrl);
-            const whatsappURL = `https://api.whatsapp.com/send?text=${message}`;
-            window.location.href = whatsappURL;
+
+            // Detect device type
+            if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                // Open WhatsApp Mobile App
+                window.location.href = `whatsapp://send?text=${message}`;
+            } else {
+                // Open WhatsApp Web for desktop users
+                window.location.href = `https://web.whatsapp.com/send?text=${message}`;
+            }
         }
 </script>
 </head>
