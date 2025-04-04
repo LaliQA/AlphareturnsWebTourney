@@ -18,22 +18,11 @@
             }, 2000); // 2 seconds delay
         }
  
-        function shareURL() {
-            const url = "alphareturns://launchGame?srcToken=TourneyTeam_50443715_ArTeam";
-            const text = "Check out this game!";
-            //check if the web share apis supported
-            if(navigator.share){
-                navigator.share({
-                    title:'Time for the Battle Join Now!',
-                    text: text,
-                    url: url
-                })
-                .then(() => console.log('share Successful'))
-                .catch((error) => console.error('error while sharing', error));
-            }
-            else{
-                alert("Web Share API is not supported in your browser")
-            }
+       function shareURL() {
+            const gameUrl = "alphareturns://launchGame?srcToken=TourneyTeam_50443715_ArTeam";
+            const message = encodeURIComponent("🔥 Time for the Battle! Join Now! 🚀\nPlay here: " + gameUrl);
+            const whatsappURL = `https://api.whatsapp.com/send?text=${message}`;
+            window.location.href = whatsappURL;
         }
 </script>
 </head>
